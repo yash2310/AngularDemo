@@ -12,7 +12,9 @@ import { DashboardComponent } from './account/dashboard/dashboard.component';
 import { ReporteesComponent } from './account/reportees/reportees.component';
 import { RouterModule } from '@angular/router';
 import { appRoute } from './appRoute';
-
+import { HomeHeaderComponent } from './home-header/home-header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AccountHeaderComponent } from './account-header/account-header.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,10 @@ import { appRoute } from './appRoute';
     RegisterComponent,
     ForgetComponent,
     DashboardComponent,
-    ReporteesComponent
+    ReporteesComponent,
+    HomeHeaderComponent,
+    FooterComponent,
+    AccountHeaderComponent
   ],
   imports: [
     BrowserModule,

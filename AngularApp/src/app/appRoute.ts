@@ -5,19 +5,28 @@ import { RegisterComponent } from './home/register/register.component';
 import { ForgetComponent } from './home/forget/forget.component';
 import { AccountComponent } from './account/account.component';
 import { DashboardComponent } from './account/dashboard/dashboard.component';
+import { HomeHeaderComponent } from './home-header/home-header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AccountHeaderComponent } from './account-header/account-header.component';
+import { ReporteesComponent } from './account/reportees/reportees.component';
 
 export class appRoute {
     static globalRoutes: Routes = [
         {
-            path: 'home', children: [
+            path: 'home', component: HomeComponent, children: [
                 { path: 'login', component: LoginComponent },
                 { path: 'register', component: RegisterComponent },
-                { path: 'forget', component: ForgetComponent }
+                { path: 'forget', component: ForgetComponent },
+                { path: '', component: HomeHeaderComponent, outlet: 'headheader' },
+                { path: '', component: FooterComponent, outlet: 'headfooter' }
             ]
         },
         {
             path: 'account', component: AccountComponent, children: [
-                { path: 'dashboard', component: DashboardComponent }
+                { path: 'dashboard', component: DashboardComponent },
+                { path: 'reportees', component: ReporteesComponent },
+                { path: '', component: AccountHeaderComponent, outlet: 'accountheader' },
+                { path: '', component: FooterComponent, outlet: 'accountfooter' }
             ]
         },
         { path: '', redirectTo: '/home', pathMatch: 'full' },
