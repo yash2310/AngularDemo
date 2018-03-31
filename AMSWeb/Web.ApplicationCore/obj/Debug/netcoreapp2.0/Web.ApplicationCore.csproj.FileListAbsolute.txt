@@ -1,8 +1,0 @@
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\bin\Debug\netcoreapp2.0\Web.ApplicationCore.deps.json
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\bin\Debug\netcoreapp2.0\Web.ApplicationCore.dll
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\bin\Debug\netcoreapp2.0\Web.ApplicationCore.pdb
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\obj\Debug\netcoreapp2.0\Web.ApplicationCore.csproj.CoreCompileInputs.cache
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\obj\Debug\netcoreapp2.0\Web.ApplicationCore.AssemblyInfoInputs.cache
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\obj\Debug\netcoreapp2.0\Web.ApplicationCore.AssemblyInfo.cs
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\obj\Debug\netcoreapp2.0\Web.ApplicationCore.dll
-E:\Angular\AngularDemo\AMSWeb\Web.ApplicationCore\obj\Debug\netcoreapp2.0\Web.ApplicationCore.pdb

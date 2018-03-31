@@ -1,0 +1,5 @@
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\AMS.Infrastructure.dll
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\AMS.Infrastructure.pdb
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.dll
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.pdb
