@@ -3,3 +3,14 @@ E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\AMS.Infrastructure
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csproj.CoreCompileInputs.cache
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.dll
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.pdb
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\AMS.Infrastructure.dll.config
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\AMS.ApplicationCore.dll
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\EntityFramework.dll
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\AMS.ApplicationCore.pdb
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\EntityFramework.xml
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csprojResolveAssemblyReference.cache
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csproj.CopyComplete
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.Migrations.CreateDatabase.resources
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csproj.GenerateResource.cache

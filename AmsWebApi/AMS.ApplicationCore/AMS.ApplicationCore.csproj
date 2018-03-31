@@ -59,6 +59,7 @@
     <Compile Include="Entities\Security\Employee.cs" />
     <Compile Include="Entities\Security\Role.cs" />
     <Compile Include="Entities\Setting.cs" />
+    <Compile Include="Interface\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

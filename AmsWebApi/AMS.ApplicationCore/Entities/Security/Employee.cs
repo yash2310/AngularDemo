@@ -35,13 +35,14 @@ namespace Web.ApplicationCore.Entities.Security
         [Required(ErrorMessage = "Reporting Manager Required")]
         public Employee ReportingManager { get; set; }
 
-        //public Designation Designation { get; set; } // Designation Entity
-        //public Department Department { get; set; } // Department Entity
-        //public Organization Organization { get; set; } // Organization Entity
+        public Designation Designation { get; set; } // Designation Entity
+        public Department Department { get; set; } // Department Entity
+        public Organization Organization { get; set; } // Organization Entity
         public IList<Role> Roles { get; set; } // List Role Entity
-        //public ICollection<OrganizationGoal> OrganizationGoals { get; set; }
-        //public ICollection<DesignationGoal> DesignationGoals { get; set; }
-        //public ICollection<ManagerialEmployeeGoal> ManagerialEmployeeGoals { get; set; }
-        //public ICollection<EmployeeGoal> EmployeeGoals { get; set; }
+        public ICollection<OrganizationGoal> OrganizationGoals { get; set; }
+        public ICollection<DesignationGoal> DesignationGoals { get; set; }
+        public ICollection<ManagerialEmployeeGoal> ManagerialEmployeeGoals { get; set; }
+        public ICollection<EmployeeGoal> EmployeeGoals { get; set; }
+        public ICollection<Rating> Ratings { get; set; }
     }
 }

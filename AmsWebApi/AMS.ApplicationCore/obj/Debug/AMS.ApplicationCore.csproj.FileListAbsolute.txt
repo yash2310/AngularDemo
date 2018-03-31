@@ -3,3 +3,4 @@ E:\Angular\AngularDemo\AmsWebApi\AMS.ApplicationCore\bin\Debug\AMS.ApplicationCo
 E:\Angular\AngularDemo\AmsWebApi\AMS.ApplicationCore\obj\Debug\AMS.ApplicationCore.csproj.CoreCompileInputs.cache
 E:\Angular\AngularDemo\AmsWebApi\AMS.ApplicationCore\obj\Debug\AMS.ApplicationCore.dll
 E:\Angular\AngularDemo\AmsWebApi\AMS.ApplicationCore\obj\Debug\AMS.ApplicationCore.pdb
+E:\Angular\AngularDemo\AmsWebApi\AMS.ApplicationCore\obj\Debug\AMS.ApplicationCore.csprojResolveAssemblyReference.cache
