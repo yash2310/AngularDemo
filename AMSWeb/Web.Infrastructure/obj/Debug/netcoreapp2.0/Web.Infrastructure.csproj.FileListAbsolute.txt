@@ -1,0 +1,12 @@
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\bin\Debug\netcoreapp2.0\Web.Infrastructure.deps.json
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\bin\Debug\netcoreapp2.0\Web.Infrastructure.dll
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\bin\Debug\netcoreapp2.0\Web.Infrastructure.pdb
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\bin\Debug\netcoreapp2.0\Web.ApplicationCore.dll
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\bin\Debug\netcoreapp2.0\Web.ApplicationCore.pdb
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.csprojResolveAssemblyReference.cache
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.AssemblyInfoInputs.cache
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.AssemblyInfo.cs
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.csproj.CopyComplete
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.dll
+E:\Angular\AngularDemo\AMSWeb\Web.Infrastructure\obj\Debug\netcoreapp2.0\Web.Infrastructure.pdb
