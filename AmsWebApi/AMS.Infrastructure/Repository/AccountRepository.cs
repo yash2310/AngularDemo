@@ -1,91 +1,77 @@
-﻿using System;
+﻿using AMS.ApplicationCore.Interface;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Configuration;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AMS.ApplicationCore.Interface;
 using Web.ApplicationCore.Entities.Security;
 
 namespace AMS.Infrastructure.Repository
 {
-    public class AccountRepository : IRepository<Employee>
+    public class AccountRepository
     {
-        private AmsContext dbcontext;
+        private AmsContext _dbcontext;
 
-        public IEnumerable<Employee> GetAll()
+        public Employee Login(string email, string password)
         {
-            throw new NotImplementedException();
-        }
-
-        public Employee GetById(object Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Insert(Employee obj)
-        {
-            using (dbcontext = new AmsContext())
+            using (_dbcontext = new AmsContext())
             {
-                ValidationContext validationContext = new ValidationContext(obj, null, null);
-                List<ValidationResult> results = new List<ValidationResult>();
-                bool valid = Validator.TryValidateObject(obj, validationContext, results, true);
-                if (!valid && results.Count > 0)
-                {
-                    throw new Exception(results[0].ToString());
-                }
-
-                using (DbContextTransaction transaction = dbcontext.Database.BeginTransaction())
+                using (DbContextTransaction transaction = _dbcontext.Database.BeginTransaction())
                 {
                     try
                     {
-                        dbcontext.Employees.Add(obj);
-                        dbcontext.SaveChanges();
-                        transaction.Commit();
-                        return "success";
+                        Employee employee =
+                            _dbcontext.Employees.FirstOrDefault(
+                                emp => emp.Email.Equals(email) && emp.Password.Equals(password));
+
+                        return employee;
                     }
                     catch (Exception e)
                     {
                         transaction.Rollback();
-                        Console.WriteLine(e.Message);
-                        return "failed";
+                        Console.Write(string.Format(ConfigurationManager.AppSettings["ErrorMessage"],
+                            this.GetType().Name,
+                            "Login", e.Message));
+                        return null;
                     }
                 }
             }
         }
 
-        public string Delete(object Id)
+        public bool ResetPassword(int id, string newPassword)
         {
-            using (dbcontext = new AmsContext())
+            using (_dbcontext = new AmsContext())
             {
-                using (DbContextTransaction transaction = dbcontext.Database.BeginTransaction())
+                using (DbContextTransaction transaction = _dbcontext.Database.BeginTransaction())
                 {
                     try
                     {
-                        dbcontext.Employees.Remove(dbcontext.Employees.First(emp => emp.Id.Equals(Id)));
-                        dbcontext.SaveChanges();
-                        transaction.Commit();
-                        return "success";
+                        Employee employee = _dbcontext.Employees.FirstOrDefault(emp => emp.Id.Equals(id));
+                        if (employee != null)
+                        {
+                            employee.Password = newPassword;
+                            _dbcontext.Employees.AddOrUpdate(employee);
+                            _dbcontext.SaveChanges();
+                            transaction.Commit();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
                     }
                     catch (Exception e)
                     {
                         transaction.Rollback();
-                        Console.WriteLine(e.Message);
-                        return "failed";
+                        Console.Write(string.Format(ConfigurationManager.AppSettings["ErrorMessage"],
+                            this.GetType().Name,
+                            "ResetPassword", e.Message));
+                        return false;
                     }
                 }
             }
-        }
-
-        public string Update(Employee obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Save()
-        {
-            throw new NotImplementedException();
         }
     }
 }

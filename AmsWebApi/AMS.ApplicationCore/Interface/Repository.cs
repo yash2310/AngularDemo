@@ -8,11 +8,10 @@ namespace AMS.ApplicationCore.Interface
 {
     public interface IRepository<T>
     {
-        IEnumerable<T> GetAll();
+        IEnumerable<T> GetAllById(object Id);
         T GetById(object Id);
-        string Delete(object Id);
-        string Update(T obj);
-        string Insert(T obj);
-        string Save();
+        bool Delete(object Id);
+        bool Update(T obj);
+        bool Insert(T obj);
     }
 }
