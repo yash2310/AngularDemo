@@ -32,7 +32,7 @@ namespace Web.ApplicationCore.Entities.Security
 
         public bool NewUser { get; set; }
 
-        [Required(ErrorMessage = "Reporting Manager Required")]
+        //[Required(ErrorMessage = "Reporting Manager Required")]
         public Employee ReportingManager { get; set; }
 
         public Designation Designation { get; set; } // Designation Entity

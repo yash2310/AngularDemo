@@ -12,5 +12,5 @@ E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\EntityFramework.xm
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csprojResolveAssemblyReference.cache
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csproj.CopyComplete
-E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.Migrations.CreateDatabase.resources
+E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.Migrations.AddCreateDatabase.resources
 E:\Angular\AngularDemo\AmsWebApi\AMS.Infrastructure\obj\Debug\AMS.Infrastructure.csproj.GenerateResource.cache

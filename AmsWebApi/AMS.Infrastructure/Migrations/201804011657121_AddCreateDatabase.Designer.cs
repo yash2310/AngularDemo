@@ -7,13 +7,13 @@ namespace AMS.Infrastructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateDatabase : IMigrationMetadata
+    public sealed partial class AddCreateDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddCreateDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803311639271_CreateDatabase"; }
+            get { return "201804011657121_AddCreateDatabase"; }
         }
         
         string IMigrationMetadata.Source

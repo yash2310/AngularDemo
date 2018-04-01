@@ -3,7 +3,7 @@ namespace AMS.Infrastructure.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateDatabase : DbMigration
+    public partial class AddCreateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -40,7 +40,7 @@ namespace AMS.Infrastructure.Migrations
                         Department_Id = c.Int(),
                         Organization_Id = c.Int(),
                         Designation_Id = c.Int(),
-                        ReportingManager_Id = c.Int(nullable: false),
+                        ReportingManager_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Departments", t => t.Department_Id)

@@ -23,8 +23,11 @@ namespace AMS.Infrastructure.Repository
                     try
                     {
                         Employee employee =
-                            _dbcontext.Employees.FirstOrDefault(
-                                emp => emp.Email.Equals(email) && emp.Password.Equals(password));
+                            _dbcontext.Employees.Include(r => r.ReportingManager)
+                                .Include(dept => dept.Department)
+                                .Include(desg => desg.Designation).Include(org => org.Organization)
+                                .Include(r => r.Roles).FirstOrDefault(
+                                    emp => emp.Email.Equals(email) && emp.Password.Equals(password));
 
                         return employee;
                     }

@@ -1,0 +1,10 @@
+
+*.dll
+*.pdb
+*.lock
+*.ide
+*.ide
+*.ide-shm
+*.ide-wal
+*.dll
+*.pdb
