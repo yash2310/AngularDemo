@@ -12,7 +12,7 @@ export class AccountHeaderComponent implements OnInit {
     router.events.subscribe((event: Event) => {
 
       if (event instanceof RoutesRecognized) {
-        debugger;
+        // debugger;
       }
       // if(event instanceof NavigationStart) {
       //   //An event triggered when navigation starts.

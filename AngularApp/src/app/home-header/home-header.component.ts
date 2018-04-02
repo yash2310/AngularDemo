@@ -9,11 +9,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HomeHeaderComponent implements OnInit {
 
   constructor(private router: Router, private route: ActivatedRoute) {
-    debugger;
+    // debugger;
    }
 
   ngOnInit() {
-    debugger;
+    // debugger;
   }
 
   onClick(type) {
