@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -16,7 +18,7 @@ import { appRoute } from './appRoute';
 import { HomeHeaderComponent } from './home-header/home-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccountHeaderComponent } from './account-header/account-header.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HomeService } from './home/home.service';
 
 @NgModule({
   declarations: [
@@ -35,11 +37,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRoute.globalRoutes),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    HomeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

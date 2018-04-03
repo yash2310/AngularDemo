@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HomeService } from '../home.service';
+import { error } from 'util';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +13,9 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   Username: string;
   Password: string;
+  loginData: any;
 
-  constructor() { }
+  constructor(private _loginService: HomeService, private router: Router) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -21,14 +24,45 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    debugger;
-    if (this.loginForm.valid) {
-      // alert(this.loginForm.controls["Username"].value);
-      // alert(this.loginForm.controls["Password"].value);
+  onClick(type) {
+    this.router.navigate(['/home/' + type]);
+  }
 
-      // console.log("Form Submitted!");
-      // loginUser(this.loginForm);
+  onSubmit() {
+    if (this.loginForm.valid) {
+      this.loginData = {
+        "Username": this.loginForm.controls["Username"].value,
+        "Password": this.loginForm.controls["Password"].value,
+      }
+
+      this._loginService.loginUser(this.loginData).subscribe(
+        data => {
+          data;
+          let loginData = {
+            "Id": data.Id,
+            "Name": data.Name,
+            "Email": data.Email,
+            "EmployeeNo": data.EmployeeNo,
+            "ContactNo": data.ContactNo,
+            "JoiningDate": data.JoiningDate,
+            "ImageUrl": data.ImageUrl,
+            "NewUser": data.NewUser,
+            "ReportingManager": data.ReportingManager,
+            "Designation": data.Designation,
+            "Department": data.Department,
+            "Organization": data.Organization,
+            "Roles": data.Roles,
+          }
+
+          localStorage.setItem('UserData', JSON.stringify(loginData));
+          // alert(JSON.parse(localStorage.getItem('UserData')).Name);
+          // alert(JSON.parse(localStorage.getItem('UserData')).Email);
+          // alert(JSON.parse(localStorage.getItem('UserData')).ReportingManager.Name);
+        },
+        error => {
+          alert(error.status);
+        }
+      );
     }
   }
 }

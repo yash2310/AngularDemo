@@ -3,8 +3,7 @@
 *.pdb
 *.lock
 *.ide
-*.ide
 *.ide-shm
 *.ide-wal
-*.dll
-*.pdb
+AmsWebApi/.vs/AmsWebApi/v15/.suo
+*.cache

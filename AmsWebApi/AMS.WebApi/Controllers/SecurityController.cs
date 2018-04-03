@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using AMS.Infrastructure.Repository;
 using Microsoft.Ajax.Utilities;
 using Web.ApplicationCore.Entities;
@@ -10,6 +11,7 @@ using Web.ApplicationCore.Entities.Security;
 namespace AMS.WebApi.Controllers
 {
     [RoutePrefix("api/security")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SecurityController : ApiController
     {
         [HttpPost]
