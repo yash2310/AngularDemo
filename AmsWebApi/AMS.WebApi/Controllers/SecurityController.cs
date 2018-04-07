@@ -73,6 +73,33 @@ namespace AMS.WebApi.Controllers
             }
             return result;
         }
+
+        [HttpPost]
+        [Route("register")]
+        public bool Register([FromBody] RegisterData regData)
+        {
+            string str = null;
+            Employee employee = new Employee();
+            AccountRepository accountRepository = new AccountRepository();
+            try
+            {
+                employee.Name = regData.Name;
+                employee.Email = regData.Email;
+                employee.EmployeeNo = regData.EmployeeNo;
+                employee.JoiningDate = regData.JoiningDate;
+                employee.Password = regData.Password;
+                employee.ImageUrl = "url";
+                employee.NewUser = true;
+                employee.CreatedOn = DateTime.Now;
+                employee.CreatedBy = 1;
+
+                return accountRepository.Register(employee);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 
     public class LoginData
@@ -109,5 +136,14 @@ namespace AMS.WebApi.Controllers
         public Data Department { get; set; } // Department Entity
         public Data Organization { get; set; } // Organization Entity
         public List<Data> Roles { get; set; } // List Role Entity
+    }
+
+    public class RegisterData
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string EmployeeNo { get; set; }
+        public DateTime JoiningDate { get; set; }
+        public string Password { get; set; }
     }
 }

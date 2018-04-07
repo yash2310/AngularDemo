@@ -18,4 +18,13 @@ export class HomeService {
         return response.json();
       });
   }
+
+  registerUser(registerUser) {
+    let header = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: header });
+    return this.http.post('http://localhost:58406/api/security/register', registerUser, options)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
 }

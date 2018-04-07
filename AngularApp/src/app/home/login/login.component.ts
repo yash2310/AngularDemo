@@ -56,9 +56,6 @@ export class LoginComponent implements OnInit {
           }
 
           localStorage.setItem('UserData', JSON.stringify(loginData));
-          // alert(JSON.parse(localStorage.getItem('UserData')).Name);
-          // alert(JSON.parse(localStorage.getItem('UserData')).Email);
-          // alert(JSON.parse(localStorage.getItem('UserData')).ReportingManager.Name);
           this.router.navigate(['account']);
         },
         error => {

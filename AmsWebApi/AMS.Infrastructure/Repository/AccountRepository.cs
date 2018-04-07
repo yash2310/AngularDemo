@@ -76,5 +76,40 @@ namespace AMS.Infrastructure.Repository
                 }
             }
         }
+
+        public bool Register(Employee employee)
+        {
+            using (_dbcontext = new AmsContext())
+            {
+                using (DbContextTransaction transaction = _dbcontext.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        ValidationContext context = new ValidationContext(employee);
+                        bool isValid = Validator.TryValidateObject(employee, context, null, true);
+
+                        if (isValid == true)
+                        {
+                            _dbcontext.Employees.Add(employee);
+                            _dbcontext.SaveChanges();
+                            transaction.Commit();
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        transaction.Rollback();
+                        Console.Write(string.Format(ConfigurationManager.AppSettings["ErrorMessage"],
+                            this.GetType().Name,
+                            "ResetPassword", e.Message));
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
