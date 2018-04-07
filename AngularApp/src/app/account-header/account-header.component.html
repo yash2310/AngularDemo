@@ -16,5 +16,11 @@
         <a class="nav-link" (click)="onClick('reportees')">Direct Reportees</a>
       </li>
     </ul>
+    <div ngbDropdown class="" style="color:gray;">
+      <button class="btn" ngbDropdownToggle>{{username}}</button>
+      <div ngbDropdownMenu style="width:50%">
+        <button class="dropdown-item" (click)="onClick('logout')">Logout</button>
+      </div>
+    </div>
   </div>
 </nav>
