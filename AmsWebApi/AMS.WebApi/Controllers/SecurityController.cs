@@ -87,6 +87,12 @@ namespace AMS.WebApi.Controllers
         public string Password { get; set; }
     }
 
+    public class Data
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+
     public class EmployeeData
     {
         public int Id { get; set; }
@@ -103,11 +109,5 @@ namespace AMS.WebApi.Controllers
         public Data Department { get; set; } // Department Entity
         public Data Organization { get; set; } // Organization Entity
         public List<Data> Roles { get; set; } // List Role Entity
-    }
-
-    public class Data
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
     }
 }

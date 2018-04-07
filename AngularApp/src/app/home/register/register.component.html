@@ -1,79 +1,75 @@
-<div class="container" style="margin-top: 100px; margin-bottom:100px;">
-  <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div class="container" style="margin-top: 50px; margin-bottom:100px;">
+  <form class="form-horizontal" [formGroup]="regModel" (ngSubmit)="onSubmit(regModel)">
     <div class="row">
-      <div class="col-md-4 offset-md-4">
+      <div class="col-md-6 offset-md-3" style="text-align:center;">
         <h4>Register New User</h4>
         <hr>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-4 offset-md-2">
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-            <div class="input-group-addon" style="width: 2.6rem">
-              <i class="fa fa-user"></i>
-            </div>
-            <input type="text" name="name" class="form-control" id="name" placeholder="John Doe" required autofocus>
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Name" required autofocus>
           </div>
-        <div class="form-control-feedback">
-          <span class="text-danger align-middle">
-            Put name validation error messages here
-          </span>
+          <!-- <div class="form-control-feedback">
+            <span class="text-danger align-middle">
+              Put name validation error messages here
+            </span>
+          </div> -->
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+            <input type="text" class="form-control" id="email" formControlName="email" placeholder="you@example.com" required autofocus>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-4 offset-md-2">
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-            <div class="input-group-addon" style="width: 2.6rem">
-              <i class="fa fa-at"></i>
-            </div>
-            <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required autofocus>
+            <input type="text" class="form-control" id="employeeno" formControlName="employeeno" placeholder="Employee No" required autofocus>
           </div>
-        <div class="form-control-feedback">
-          <span class="text-danger align-middle">
-            Put e-mail validation error messages here
-          </span>
         </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd (Date of Joining)" formControlName="doj" name="dp" readonly ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="dp" (click)="d.toggle()" type="button">
+                <img src="../../../assets/images/calendar-icon.svg" id="dpDiv" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-4 offset-md-2">
         <div class="form-group has-danger">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-            <div class="input-group-addon" style="width: 2.6rem">
-              <i class="fa fa-key"></i>
-            </div>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password" required>
           </div>
-        <div class="form-control-feedback">
-          <span class="text-danger align-middle">
-            <i class="fa fa-close"> Example Error Message</i>
-          </span>
-        </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-4">
         <div class="form-group">
           <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-            <div class="input-group-addon" style="width: 2.6rem">
-              <i class="fa fa-repeat"></i>
-            </div>
-            <input type="password" name="password-confirmation" class="form-control" id="password-confirm" placeholder="Password" required>
+            <input type="password" class="form-control" id="password-confirm" formControlName="confirmpassword" placeholder="Confirm Password"
+              required>
           </div>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
-        <button type="submit" class="btn btn-success">
-          <i class="fa fa-user-plus"></i> Register</button>
+      <div class="col-md-2 offset-md-5">
+        <button type="submit" class="btn btn-success" style="width:100%;">
+          <i class="fa fa-user-plus"></i> Register
+        </button>
       </div>
     </div>
   </form>

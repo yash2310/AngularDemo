@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HomeService } from '../home.service';
 import { error } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
   Password: string;
   loginData: any;
 
-  constructor(private _loginService: HomeService, private router: Router) { }
+  constructor(private _loginService: HomeService, private router: Router, private route: ActivatedRoute, private http: Http) { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -58,6 +59,7 @@ export class LoginComponent implements OnInit {
           // alert(JSON.parse(localStorage.getItem('UserData')).Name);
           // alert(JSON.parse(localStorage.getItem('UserData')).Email);
           // alert(JSON.parse(localStorage.getItem('UserData')).ReportingManager.Name);
+          this.router.navigate(['account']);
         },
         error => {
           alert(error.status);
