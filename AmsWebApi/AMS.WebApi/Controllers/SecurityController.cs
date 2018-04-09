@@ -120,6 +120,13 @@ namespace AMS.WebApi.Controllers
         public string Name { get; set; }
     }
 
+    public class Reporting
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+    }
+
     public class EmployeeData
     {
         public int Id { get; set; }

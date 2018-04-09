@@ -18,17 +18,30 @@ namespace AMS.Infrastructure.Repository
         {
             using (_dbcontext = new AmsContext())
             {
-                try
+                using (DbContextTransaction transaction = _dbcontext.Database.BeginTransaction())
                 {
-                    IEnumerable<Employee> employees =
-                        _dbcontext.Employees.Where(emp => emp.ReportingManager.Id.Equals(id));
-                    return employees;
-                }
-                catch (Exception e)
-                {
-                    Console.Write(string.Format(ConfigurationManager.AppSettings["ErrorMessage"], this.GetType().Name,
-                        "GetAllById", e.Message));
-                    return null;
+                    try
+                    {
+                        int data = Convert.ToInt32(id);
+                        List<Employee> employee =
+                            _dbcontext.Employees
+                                .Include(r => r.ReportingManager)
+                                .Include(d => d.Designation)
+                                .Include(d => d.Department)
+                                .Include(d => d.Organization)
+                                .Include(d => d.Roles)
+                                .Where(emp => emp.ReportingManager.Id == data).ToList();
+
+                        return employee;
+                    }
+                    catch (Exception e)
+                    {
+                        transaction.Rollback();
+                        Console.Write(string.Format(ConfigurationManager.AppSettings["ErrorMessage"],
+                            this.GetType().Name,
+                            "GetAllById", e.Message));
+                        return null;
+                    }
                 }
             }
         }
