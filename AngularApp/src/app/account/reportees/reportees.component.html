@@ -1,28 +1,47 @@
 <div class="container">
-  <h3>Reportee Details</h3>
-
+  <br/>
+  <br/>
+  <h4>Reportee Details</h4>
   <table class="table table-bordered">
-    <thead>
+    <thead style="background-color:darkcyan;">
       <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Employee No</th>
-        <th>Reporting</th>
+        <!-- <th>Reporting</th> -->
         <th>Designation</th>
-        <th>Department</th>
-        <th>Organization</th>
+        <!-- <th>Department</th>
+        <th>Organization</th> -->
+        <th></th>
       </tr>
     </thead>
-    <!-- <tbody>
+    <tbody>
       <tr *ngFor="let reportee of reporteeData">
-        <td>{{reportee.Name}}</td>
-        <td>{{reportee.Email}}</td>
-        <td>{{reportee.EmployeeNo}}</td>
-        <td>{{reportee.ReportingManager.Name}}</td>
-        <td>{{reportee.Designation.Name}}</td>
-        <td>{{reportee.Department.Name}}</td>
-        <td>{{reportee.Organization.Name}}</td>
+        <td>
+          <p>{{reportee.Name}}</p>
+        </td>
+        <td>
+          <p>{{reportee.Email}}</p>
+        </td>
+        <td>
+          <p>{{reportee.EmployeeNo}}</p>
+        </td>
+        <!-- <td>
+          <p>{{reportee.ReportingManager.Name}}</p>
+        </td> -->
+        <td>
+          <p>{{reportee.Designation.Name}}</p>
+        </td>
+        <!-- <td>
+          <p>{{reportee.Department.Name}}</p>
+        </td>
+        <td>
+          <p>{{reportee.Organization.Name}}</p>
+        </td> -->
+        <td>
+          <a [routerLink]="" (click)="Link(reportee)">Assign</a>
+        </td>
       </tr>
-    </tbody> -->
+    </tbody>
   </table>
 </div>

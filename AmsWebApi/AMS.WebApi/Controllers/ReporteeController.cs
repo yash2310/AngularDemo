@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Web.ApplicationCore.Entities;
 using Web.ApplicationCore.Entities.Security;
 using WebGrease.Css.Extensions;
@@ -10,9 +13,11 @@ using WebGrease.Css.Extensions;
 namespace AMS.WebApi.Controllers
 {
     [RoutePrefix("api/reportee")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ReporteeController : ApiController
     {
-        EmployeeRepository repository = new EmployeeRepository();
+        private EmployeeRepository repository = new EmployeeRepository();
+        private ReporteeRepository reporteeRepository = new ReporteeRepository();
 
         [HttpGet]
         [Route("reportees/{id}")]
@@ -69,6 +74,41 @@ namespace AMS.WebApi.Controllers
                 reporteeDatas = null;
             }
             return reporteeDatas;
+        }
+
+        [HttpGet]
+        [Route("allgoals/{id}")]
+        public ReporteeGoal GetReporteeGoal(int id)
+        {
+            ReporteeGoal reporteeGoal = new ReporteeGoal();
+            try
+            {
+                return reporteeRepository.ReporteeGoals(id);
+            }
+            catch (Exception e)
+            {
+                HttpResponseMessage message = new HttpResponseMessage(HttpStatusCode.Conflict);
+                message.ReasonPhrase = "Invalid Response";
+                throw new HttpResponseException(message);
+            }
+
+            return reporteeGoal;
+        }
+
+        [HttpGet]
+        [Route("managergoals/{id}")]
+        public List<GoalData> GetManagerialGoal(int id)
+        {
+            try
+            {
+                return reporteeRepository.ManagerialGoals(id);
+            }
+            catch (Exception e)
+            {
+                HttpResponseMessage message = new HttpResponseMessage(HttpStatusCode.Conflict);
+                message.ReasonPhrase = "Invalid Response";
+                throw new HttpResponseException(message);
+            }
         }
     }
 

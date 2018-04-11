@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '../account.service';
+import { Router } from '@angular/router';
 // import { error } from 'protractor';
 
 @Component({
@@ -9,28 +10,20 @@ import { AccountService } from '../account.service';
 })
 export class ReporteesComponent implements OnInit {
   reporteeData: any;
-  constructor(private _reporteeService: AccountService) { }
+  constructor(private _reporteeService: AccountService, private router: Router) { }
 
   ngOnInit() {
-    debugger;
-    // this._reporteeService.reporteeData(21).subscribe(
-    //   data => {
-    //     data;
-    //     // this.reporteeData = {
-    //     //   "Id": data.Id,
-    //     //   "Name": data.Name,
-    //     //   "Email": data.Email,
-    //     //   "EmployeeNo": data.EmployeeNo,
-    //     //   "JoiningDate": data.JoiningDate,
-    //     //   "ReportingManager": data.ReportingManager,
-    //     //   "Designation": data.Designation,
-    //     //   "Department": data.Department,
-    //     //   "Organization": data.Organization,
-    //     //   "Roles": data.Roles,
-    //     // }
-    //   },
-    //   error => {
-    //     alert(error.status);
-    //   });
+    this._reporteeService.reporteeData(21).subscribe(
+      data => {
+        this.reporteeData = data;
+      },
+      error => {
+        alert("Invalid Data");
+      });
+  }
+
+  Link(reportee) {
+    // debugger;
+    this.router.navigate(['account', 'reporteegoal'], { queryParams: { data: btoa(reportee.Id + ':' + reportee.Name + ':' + reportee.Email) } });
   }
 }

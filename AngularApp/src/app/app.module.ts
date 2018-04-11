@@ -19,6 +19,8 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccountHeaderComponent } from './account-header/account-header.component';
 import { HomeService } from './home/home.service';
+import { AccountService } from './account/account.service';
+import { ReporteeGoalComponent } from './account/reportee-goal/reportee-goal.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { HomeService } from './home/home.service';
     ReporteesComponent,
     HomeHeaderComponent,
     FooterComponent,
-    AccountHeaderComponent
+    AccountHeaderComponent,
+    ReporteeGoalComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { HomeService } from './home/home.service';
     ReactiveFormsModule
   ],
   providers: [
-    HomeService
+    HomeService,
+    AccountService
   ],
   bootstrap: [AppComponent]
 })

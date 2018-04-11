@@ -9,6 +9,7 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccountHeaderComponent } from './account-header/account-header.component';
 import { ReporteesComponent } from './account/reportees/reportees.component';
+import { ReporteeGoalComponent } from './account/reportee-goal/reportee-goal.component';
 
 export class appRoute {
     static globalRoutes: Routes = [
@@ -25,6 +26,7 @@ export class appRoute {
             path: 'account', component: AccountComponent, children: [
                 { path: 'dashboard', component: DashboardComponent },
                 { path: 'reportees', component: ReporteesComponent },
+                { path: 'reporteegoal', component: ReporteeGoalComponent },
                 { path: '', component: AccountHeaderComponent, outlet: 'accountheader' },
                 { path: '', component: FooterComponent, outlet: 'accountfooter' }
             ]
