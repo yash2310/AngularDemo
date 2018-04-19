@@ -1,3 +1,130 @@
-<p>
-  reportee-goal works!
-</p>
+<div class="container">
+
+  <form class="form-horizontal" [formGroup]="goalModel">
+    <div style="background-color:lightblue;height:2rem;">
+      <div style="margin-top:1rem; font-style:italic;">
+        &nbsp;&nbsp;Reportee Name : {{reporteeName}}
+      </div>
+    </div>
+
+    <br/>
+    <div class="row">
+      <div class="col-md-2">
+        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="goal" formControlName="goal"
+          placeholder="Goal" required autofocus/>
+      </div>
+
+      <div class="col-md-1">
+        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="weight" formControlName="weight"
+          placeholder="WT" required autofocus/>
+      </div>
+
+      <div class="col-md-2">
+        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="desc" formControlName="desc"
+          placeholder="Description" required autofocus/>
+      </div>
+
+      <div class="col-md-2">
+        <div class="input-group-append">
+          <input class="form-control" style="font-family: Times New Roman, Times, serif;" placeholder="yyyy-mm-dd" name="dp" formControlName="stdate"
+            ngbDatepicker #sd="ngbDatepicker" />
+          <button class="btn btn-outline-secondary" (click)="sd.toggle()" type="button">
+            <img src="../../../assets/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <div class="input-group-append">
+          <input class="form-control" style="font-family: Times New Roman, Times, serif;" placeholder="yyyy-mm-dd" name="dp" formControlName="enddate"
+            ngbDatepicker #ed="ngbDatepicker" />
+          <button class="btn btn-outline-secondary" (click)="ed.toggle()" type="button">
+            <img src="../../../assets/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="reveiwer" formControlName="reveiwer"
+          placeholder="Reviewer" required autofocus/>
+      </div>
+
+      <div class="col-md-1">
+        <input type="image" src="../../../assets/images/button_add.png" value="SUBMIT" style="height:20px; width:100%; margin-top:-2px;"
+        />
+        <input type="image" *ngIf="btnUpdate == true" src="../../../assets/images/button_update.png" value="SUBMIT" style="height:20px; width:100%; margin-top:-2px;"
+        />
+        <input type="image" src="../../../assets/images/button_reset.png" value="SUBMIT" style="height:20px; width:100%; margin-top:-2px;"
+        />
+      </div>
+    </div>
+
+  </form>
+  <br/>
+
+  <div style="background-color:lightblue;height:2rem;">
+    <div style="margin-top:1rem; font-style:italic;">
+      <b>&nbsp;&nbsp;Reportee Goals</b>
+    </div>
+  </div>
+  <div class="row table-responsive">
+
+    <table class="table">
+
+      <!--Table head-->
+      <thead class="blue-grey lighten-4">
+        <tr style="height:10px;text-align:center">
+          <th style="width:17%">Goal</th>
+          <th style="width:5%">Weight</th>
+          <th style="width:30%">Description</th>
+          <th style="width:10%">Start Date</th>
+          <th style="width:10%">End Date</th>
+          <th style="width:20%">Reviewers</th>
+          <th style="width:8%"></th>
+        </tr>
+      </thead>
+      <!--Table head-->
+
+      <!--Table body-->
+      <tbody>
+        <tr>
+          <td>Mark</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>1988-10-23</td>
+          <td>1988-10-23</td>
+          <td>@mdo</td>
+          <td style="width:5rem;">
+            <!-- <img src="../../../assets/images/cancel.png" class="image" /> -->
+            <img src="../../../assets/images/edit.png" class="image" />
+            <!-- <img src="../../../assets/images/update.png" class="image" /> -->
+            <img src="../../../assets/images/delete.png" class="image" />
+          </td>
+        </tr>
+        <tr>
+          <td>Mark</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>1988-10-23</td>
+          <td>1988-10-23</td>
+          <td>@mdo</td>
+          <td style="width:5rem;">
+            <!-- <img src="../../../assets/images/cancel.png" class="image" /> -->
+            <img src="../../../assets/images/edit.png" class="image" />
+            <!-- <img src="../../../assets/images/update.png" class="image" /> -->
+            <img src="../../../assets/images/delete.png" class="image" />
+          </td>
+        </tr>
+      </tbody>
+      <!--Table body-->
+
+    </table>
+  </div>
+  <br/>
+</div>
+
+<style>
+  fontSize {
+    font-family: "Times New Roman", Times, serif;
+  }
+</style>
