@@ -1,20 +1,20 @@
-﻿using System;
+﻿using AMS.Infrastructure.Repository;
+using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using AMS.Infrastructure.Repository;
-using Microsoft.Ajax.Utilities;
 using Web.ApplicationCore.Entities.Security;
 
 namespace AMS.WebApi.Controllers
 {
-    [System.Web.Mvc.RoutePrefix("api/security")]
+    [RoutePrefix("api/security")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SecurityController : ApiController
     {
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("login")]
+        [HttpPost]
+        [Route("login")]
         public EmployeeData Login([FromBody] LoginData loginData)
         {
             EmployeeData employeeData = null;
@@ -53,8 +53,8 @@ namespace AMS.WebApi.Controllers
             return employeeData;
         }
 
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("reset")]
+        [HttpPost]
+        [Route("reset")]
         public string ResetPassword([FromBody] ResetData resetData)
         {
             AccountRepository accountRepository = new AccountRepository();
@@ -73,8 +73,8 @@ namespace AMS.WebApi.Controllers
             return result;
         }
 
-        [System.Web.Mvc.HttpPost]
-        [System.Web.Mvc.Route("register")]
+        [HttpPost]
+        [Route("register")]
         public bool Register([FromBody] RegisterData regData)
         {
             string str = null;

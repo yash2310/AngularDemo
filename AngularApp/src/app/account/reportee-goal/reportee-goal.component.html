@@ -10,51 +10,64 @@
     <br/>
     <div class="row">
       <div class="col-md-2">
-        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="goal" formControlName="goal"
-          placeholder="Goal" required autofocus/>
-      </div>
-
-      <div class="col-md-1">
-        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="weight" formControlName="weight"
-          placeholder="WT" required autofocus/>
+        <input type="text" class="form-control input" id="goal" formControlName="goal" placeholder="Goal" required autofocus/>
       </div>
 
       <div class="col-md-2">
-        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="desc" formControlName="desc"
-          placeholder="Description" required autofocus/>
+        <select class="form-control input" style="height: 30px;" id="type" formControlName="goalType" required autofocus>
+          <option selected>Select</option>
+          <option value="1">Employee</option>
+          <option value="2">Manager</option>
+        </select>
+      </div>
+
+      <div class="col-md-1">
+        <input type="text" class="form-control input" id="weight" formControlName="weight" placeholder="WT" required autofocus/>
+      </div>
+
+      <div class="col-md-2">
+        <input type="text" class="form-control input" id="desc" formControlName="desc" placeholder="Description" required autofocus/>
       </div>
 
       <div class="col-md-2">
         <div class="input-group-append">
-          <input class="form-control" style="font-family: Times New Roman, Times, serif;" placeholder="yyyy-mm-dd" name="dp" formControlName="stdate"
-            ngbDatepicker #sd="ngbDatepicker" />
-          <button class="btn btn-outline-secondary" (click)="sd.toggle()" type="button">
-            <img src="../../../assets/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
+          <input class="form-control" style="height: 25px; font-family: Times New Roman, Times, serif;" placeholder="Start Date" name="dp"
+            formControlName="stdate" ngbDatepicker #sd="ngbDatepicker" />
+          <button class="btn btn-outline-secondary" (click)="sd.toggle()" type="button" style="height: 25px; ">
+            <img src="../../../assets/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer; margin-top: -15px;"
+            />
+          </button>
+        </div>
+        <!-- </div>
+
+      <div class="col-md-2"> -->
+        <div class="input-group-append" style="margin-top: 5px;">
+          <input class="form-control" style="height: 25px; font-family: Times New Roman, Times, serif;" placeholder="End Date" name="dp"
+            formControlName="enddate" ngbDatepicker #ed="ngbDatepicker" />
+          <button class="btn btn-outline-secondary" (click)="ed.toggle()" type="button" style="height: 25px; ">
+            <img src="../../../assets/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer; margin-top: -15px;"
+            />
           </button>
         </div>
       </div>
 
       <div class="col-md-2">
-        <div class="input-group-append">
-          <input class="form-control" style="font-family: Times New Roman, Times, serif;" placeholder="yyyy-mm-dd" name="dp" formControlName="enddate"
-            ngbDatepicker #ed="ngbDatepicker" />
-          <button class="btn btn-outline-secondary" (click)="ed.toggle()" type="button">
-            <img src="../../../assets/images/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;" />
-          </button>
-        </div>
-      </div>
-
-      <div class="col-md-2">
-        <input type="text" class="form-control" style="font-family: Times New Roman, Times, serif;" id="reveiwer" formControlName="reveiwer"
-          placeholder="Reviewer" required autofocus/>
+        <select class="custom-select input" id="reveiwer" formControlName="reveiwer" multiple="multiple" required autofocus>
+          <option value="cheese">Cheese</option>
+          <option value="tomatoes">Tomatoes</option>
+          <option value="mozarella">Mozzarella</option>
+          <option value="mushrooms">Mushrooms</option>
+          <option value="pepperoni">Pepperoni</option>
+          <option value="onions">Onions</option>
+        </select>
       </div>
 
       <div class="col-md-1">
-        <input type="image" src="../../../assets/images/button_add.png" value="SUBMIT" style="height:20px; width:100%; margin-top:-2px;"
+        <input type="image" src="../../../assets/images/button_add.png" value="SUBMIT" style="height:25px; width:100%; margin-top:-2px;"
         />
         <input type="image" *ngIf="btnUpdate == true" src="../../../assets/images/button_update.png" value="SUBMIT" style="height:20px; width:100%; margin-top:-2px;"
         />
-        <input type="image" src="../../../assets/images/button_reset.png" value="SUBMIT" style="height:20px; width:100%; margin-top:-2px;"
+        <input type="image" src="../../../assets/images/button_reset.png" value="SUBMIT" style="height:25px; width:100%; margin-top:-2px;"
         />
       </div>
     </div>

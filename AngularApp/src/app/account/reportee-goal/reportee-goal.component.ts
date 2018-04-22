@@ -25,6 +25,7 @@ export class ReporteeGoalComponent implements OnInit {
 
     this.goalModel = new FormGroup({
       goal: new FormControl('', Validators.required),
+      goalType: new FormControl('', Validators.required),
       weight: new FormControl('', Validators.required),
       desc: new FormControl('', Validators.required),
       stdate: new FormControl('', Validators.required),

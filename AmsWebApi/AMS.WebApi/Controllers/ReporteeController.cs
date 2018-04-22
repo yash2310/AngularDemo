@@ -6,9 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using Web.ApplicationCore.Entities;
 using Web.ApplicationCore.Entities.Security;
-using WebGrease.Css.Extensions;
 
 namespace AMS.WebApi.Controllers
 {
